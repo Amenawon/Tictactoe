@@ -47,6 +47,14 @@ namespace TicTacToe.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TicTacToe API v1"));
             }
+            else
+            {
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("./swagger/v1/swagger.json", "TicTacToe API v1");
+                    c.RoutePrefix = string.Empty;
+                });
+            }
 
             app.UseCors(x => x
               .AllowAnyOrigin()
