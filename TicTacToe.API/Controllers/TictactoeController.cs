@@ -18,8 +18,8 @@ namespace TicTacToe.API.Controllers
 			_gameLogic = gameLogic;
         }
 
-        [HttpGet("board")]
-        public IActionResult Board(string board)
+        [HttpGet("play")]
+        public IActionResult PlayGame(string board)
         {
 			if (board !=null && board.Any(c => "+%20".Contains(c)))
 				board = board.Replace("+", " ").Replace("%20", " ");
